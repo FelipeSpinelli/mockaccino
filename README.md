@@ -4,11 +4,11 @@ A .NET framework for fill objects properties.
 
 ## Getting Started
 
-These instructions will get you an overview to start filling your object the way you need.
+These instructions will get you an overview to start filling your objects the way you need.
 
 ### Example
 
-Let's suppose that you have a Customer class, like below, and needs to fill it's properties to test an API response. 
+Let's suppose that you have a Customer class, like below, and needs to fill it's properties to test an response of an API. 
 ```
 using System;
 
@@ -25,7 +25,7 @@ namespace MrMime.Core.Tests.Models
 }
 ```
 
-After you refer Mr.Mime to your project, you will need to instantiate an object of class *** Mimenator *** and invoke the Load method to load the contracts. You can pass the path of the files, otherwise it will attempt to load the files from the Contracts folder, within the home directory, during the execution of the program.
+After you refer Mr.Mime to your project, you will need to instantiate an object of class *** Mimenator *** and invoke the Load method to load the contracts. You can pass the path of the files, otherwise it will attempt to load the files from the Contracts folder, within the current directory, during the execution of the program.
 ```
 var mimenator = new Mimenator();
 mimenator.Load();
@@ -35,8 +35,8 @@ mimenator.Load();
 var mimenator = new Mimenator();
 mimenator.Load("<contracts-folder-path>");
 ```
-Mr.Mime will look for files, in the specified folder, that ends with .contract.json. (Ex.: ***Customer.contract.json***).
-These files needs to be like this:
+Mr.Mime will look for files in the specified folder that end with .contract.json. (Ex .: ***Customer.contract.json***).
+These files need to look like this:
 ```
 {
 
