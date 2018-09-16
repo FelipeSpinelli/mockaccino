@@ -79,7 +79,7 @@ These files needs to be like this:
     ]
 }
 ```
-After the contracts has been loaded, you just need do invoke the Imitate method, giving an object and the **contract *name* or *id***:
+After the contracts has been loaded, you just need to invoke the Imitate method, giving an object and the **contract *name* or *id***:
 ```
 var customer = mimenator.Imitate(new Customer(), "Customer");
 ```
