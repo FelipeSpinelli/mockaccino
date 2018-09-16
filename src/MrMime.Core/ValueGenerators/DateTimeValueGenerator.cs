@@ -29,8 +29,8 @@ namespace MrMime.Core.ValueGenerators
             }
         }
 
-        internal static DateTimeValueGenerator _instance = new DateTimeValueGenerator();
-        internal static DateTime? GetValue(ContractField field)
+        public static DateTimeValueGenerator _instance = new DateTimeValueGenerator();
+        public static DateTime? GetValue(ContractField field)
         {
             return (DateTime?)_instance.GenerateValue(field);
         }

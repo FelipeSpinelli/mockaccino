@@ -25,8 +25,8 @@ namespace MrMime.Core.ValueGenerators
             }
         }
 
-        internal static BooleanValueGenerator _instance = new BooleanValueGenerator();
-        internal static bool? GetValue(ContractField field)
+        public static BooleanValueGenerator _instance = new BooleanValueGenerator();
+        public static bool? GetValue(ContractField field)
         {
             return (bool?)_instance.GenerateValue(field);
         }

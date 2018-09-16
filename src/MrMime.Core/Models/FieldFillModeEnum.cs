@@ -1,6 +1,6 @@
 ﻿namespace MrMime.Core.Models
 {
-    internal enum FieldFillModeEnum
+    public enum FieldFillModeEnum
     {
         None,
         Null,

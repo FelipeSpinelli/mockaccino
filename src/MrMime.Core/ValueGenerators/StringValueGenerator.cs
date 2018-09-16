@@ -1,5 +1,6 @@
 ﻿using MrMime.Core.Models;
 using System;
+using System.Diagnostics;
 
 namespace MrMime.Core.ValueGenerators
 {
@@ -30,14 +31,21 @@ namespace MrMime.Core.ValueGenerators
                     return null;
                 case FieldFillModeEnum.Random:
                     var random = new Random();
-                    var length = random.Next(field.MinValue ?? 0, field.MaxValue ?? 10);
+                    var minLength = field.MinValue ?? 1;
+                    minLength = minLength < 1 ? 1 : minLength;
+
+                    var maxLength = field.MaxValue ?? minLength + 10;
+                    maxLength = maxLength < minLength ? minLength + 10 : maxLength;
+
+                    var length = random.Next(minLength, maxLength);
                     var value = string.Empty;
                     while (value.Length < length)
                     {
                         var wordIndex = random.Next(0, LOREM_IPSUM_WORDS.Length);
                         value += LOREM_IPSUM_WORDS[wordIndex] + " ";
                     }
-                    return value.TrimEnd().Substring(0, length);
+
+                    return value.Substring(0, length).Trim();
                 case FieldFillModeEnum.Fixed:
                     return field.DefaultValue.ToString();
                 default:
@@ -45,8 +53,8 @@ namespace MrMime.Core.ValueGenerators
             }
         }
 
-        internal static StringValueGenerator _instance = new StringValueGenerator();
-        internal static string GetValue(ContractField field)
+        public static StringValueGenerator _instance = new StringValueGenerator();
+        public static string GetValue(ContractField field)
         {
             return (string)_instance.GenerateValue(field);
         }

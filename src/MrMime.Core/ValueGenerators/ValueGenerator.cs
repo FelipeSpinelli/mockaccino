@@ -1,35 +1,48 @@
 ﻿using MrMime.Core.Models;
+using System.Diagnostics;
 
 namespace MrMime.Core.ValueGenerators
 {
 
-    internal abstract class ValueGenerator
+    public abstract class ValueGenerator
     {
         protected abstract object GenerateValue(ContractField field);
 
-        internal static object GetValue(ContractField field)
+        public static object GetValue(ContractField field)
         {
+            object value = null;
             switch (field.Type)
             {
                 case FieldTypeEnum.String:
-                    return StringValueGenerator.GetValue(field);
+                    value = StringValueGenerator.GetValue(field);
+                    break;
                 case FieldTypeEnum.Int16:
-                    return Int16ValueGenerator.GetValue(field);
+                    value = Int16ValueGenerator.GetValue(field);
+                    break;
                 case FieldTypeEnum.Int32:
-                    return Int32ValueGenerator.GetValue(field);
+                    value = Int32ValueGenerator.GetValue(field);
+                    break;
                 case FieldTypeEnum.Int64:
-                    return Int64ValueGenerator.GetValue(field);
+                    value = Int64ValueGenerator.GetValue(field);
+                    break;
                 case FieldTypeEnum.Boolean:
-                    return BooleanValueGenerator.GetValue(field);
+                    value = BooleanValueGenerator.GetValue(field);
+                    break;
                 case FieldTypeEnum.DateTime:
-                    return DateTimeValueGenerator.GetValue(field);
+                    value = DateTimeValueGenerator.GetValue(field);
+                    break;
                 case FieldTypeEnum.Char:
-                    return CharValueGenerator.GetValue(field);
+                    value = CharValueGenerator.GetValue(field);
+                    break;
                 case FieldTypeEnum.Guid:
-                    return GuidValueGenerator.GetValue(field);
+                    value = GuidValueGenerator.GetValue(field);
+                    break;
                 default:
-                    return null;
+                    value = null;
+                    break;
             }
+            Debug.WriteLine($"Generated value: {value}");
+            return value;
         }
     }
 }

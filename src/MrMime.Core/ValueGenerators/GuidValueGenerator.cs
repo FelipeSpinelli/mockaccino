@@ -25,8 +25,8 @@ namespace MrMime.Core.ValueGenerators
             }
         }
 
-        internal static GuidValueGenerator _instance = new GuidValueGenerator();
-        internal static Guid? GetValue(ContractField field)
+        public static GuidValueGenerator _instance = new GuidValueGenerator();
+        public static Guid? GetValue(ContractField field)
         {
             return (Guid?)_instance.GenerateValue(field);
         }

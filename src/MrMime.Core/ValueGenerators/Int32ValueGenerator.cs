@@ -26,8 +26,8 @@ namespace MrMime.Core.ValueGenerators
             }
         }
 
-        internal static Int32ValueGenerator _instance = new Int32ValueGenerator();
-        internal static int? GetValue(ContractField field)
+        public static Int32ValueGenerator _instance = new Int32ValueGenerator();
+        public static int? GetValue(ContractField field)
         {
             return (int?)_instance.GenerateValue(field);
         }

@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MrMime.Core", "MrMime.Core\MrMime.Core.csproj", "{0FD12D7B-9B4D-45EE-BB96-7A509A7D16AD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MrMime.Core", "src\MrMime.Core\MrMime.Core.csproj", "{0FD12D7B-9B4D-45EE-BB96-7A509A7D16AD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MrMime.Core.Tests", "..\tests\MrMime.Core.Tests\MrMime.Core.Tests.csproj", "{4FFFE118-588C-4E22-AF15-F73A60DDEA45}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MrMime.Core.Tests", "tests\MrMime.Core.Tests\MrMime.Core.Tests.csproj", "{4FFFE118-588C-4E22-AF15-F73A60DDEA45}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

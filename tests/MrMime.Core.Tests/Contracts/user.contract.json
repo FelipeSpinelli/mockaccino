@@ -1,0 +1,21 @@
+﻿{
+
+  "contract_id": "7F7D0AB5-974E-42F8-A446-B3E38A4CDA6F",
+  "name": "User",
+  "fields": [
+    {
+      "name": "Id",
+      "type": "Int32",
+      "is_nullable": true,
+      "fill_mode": "Null"
+    },
+    {
+      "name": "Name",
+      "type": "String",
+      "is_nullable": false,
+      "fill_mode": "Random",
+      "min_value": "30",
+      "max_value": "50"
+    }
+  ]
+}

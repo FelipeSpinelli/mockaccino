@@ -26,8 +26,8 @@ namespace MrMime.Core.ValueGenerators
             }
         }
 
-        internal static Int64ValueGenerator _instance = new Int64ValueGenerator();
-        internal static long? GetValue(ContractField field)
+        public static Int64ValueGenerator _instance = new Int64ValueGenerator();
+        public static long? GetValue(ContractField field)
         {
             return (long?)_instance.GenerateValue(field);
         }

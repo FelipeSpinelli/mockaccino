@@ -26,8 +26,8 @@ namespace MrMime.Core.ValueGenerators
             }
         }
 
-        internal static Int16ValueGenerator _instance = new Int16ValueGenerator();
-        internal static short? GetValue(ContractField field)
+        public static Int16ValueGenerator _instance = new Int16ValueGenerator();
+        public static short? GetValue(ContractField field)
         {
             return (short?)_instance.GenerateValue(field);
         }

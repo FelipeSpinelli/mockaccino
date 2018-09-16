@@ -25,8 +25,8 @@ namespace MrMime.Core.ValueGenerators
             }
         }
 
-        internal static CharValueGenerator _instance = new CharValueGenerator();
-        internal static char? GetValue(ContractField field)
+        public static CharValueGenerator _instance = new CharValueGenerator();
+        public static char? GetValue(ContractField field)
         {
             return (char?)_instance.GenerateValue(field);
         }

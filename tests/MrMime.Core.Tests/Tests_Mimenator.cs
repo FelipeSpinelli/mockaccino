@@ -12,7 +12,7 @@ namespace MrMime.Core.Tests
             var mimenator = new Mimenator();
             mimenator.Load();
 
-            var customer = mimenator.Imitate(new Customer(), "Customer");
+            var customer = mimenator.Imitate(new User(), "User");
             Assert.IsNotNull(customer);
         }
     }

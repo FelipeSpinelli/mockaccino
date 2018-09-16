@@ -1,6 +1,6 @@
 ﻿namespace MrMime.Core.Models
 {
-    internal enum FieldTypeEnum
+    public enum FieldTypeEnum
     {
         String,
         Int16,
@@ -9,6 +9,7 @@
         Boolean, 
         DateTime,
         Char,
-        Guid
+        Guid,
+        Decimal
     }
 }
