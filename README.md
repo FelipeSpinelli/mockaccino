@@ -92,3 +92,5 @@ var customer = mimenator.Imitate(new Customer(), Guid.Parse("D3087454-23A7-47B5-
 ## Prerequisites
 
 The project depends on [Newtonsoft's Json.NET library](https://www.newtonsoft.com/json) and .NET Framework 4.5.1 version and above. 
+
+<script src="https://gist.github.com/FelipeSpinelli/74fbe07311fdc9dc2b0b33d3e471620d.js"></script>
