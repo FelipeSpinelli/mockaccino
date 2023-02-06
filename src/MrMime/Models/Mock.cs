@@ -11,6 +11,7 @@ namespace MrMime.Models
         { 
             HttpMethod.Post,
             HttpMethod.Put,
+            HttpMethod.Patch,
             HttpMethod.Delete
         }; 
 

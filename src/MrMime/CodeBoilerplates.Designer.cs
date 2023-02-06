@@ -74,13 +74,15 @@ namespace MrMime {
         ///    {
         ///        private readonly ILogger&lt;MockController&gt; _logger;
         ///
+        ///        public MockController()
+        ///        {
+        ///        }
+        ///
         ///        public MockController(ILogger&lt;MockController&gt; logger)
         ///        {
         ///            _logger = logger;
         ///        }
         ///
-        ///        {{for mock in mocks }} 
-        ///            {{ mock }}
         ///        { [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string MockController {

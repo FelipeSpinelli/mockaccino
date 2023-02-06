@@ -57,5 +57,117 @@
         }
       }
     ]
+  },
+  {
+    "Name": "PutResource",
+    "Method": "Put",
+    "Route": "~/api/v1/resources/{id}",
+    "Description": "",
+    "Responses": [
+      {
+        "Priority": 0,
+        "StatusCode": 400,
+        "Content": [
+          {
+            "Message": "Name cannot be empty!"
+          }
+        ],
+        "Filter": {
+          "From": "Body",
+          "ApplyOn": "Name",
+          "WhenEqualsTo": ""
+        }
+      },
+      {
+        "Priority": 1,
+        "StatusCode": 204,
+        "Content": {
+        },
+        "Filter": {
+          "From": "Route",
+          "ApplyOn": "id",
+          "WhenEqualsTo": "1"
+        }
+      },
+      {
+        "Priority": 2,
+        "StatusCode": 404,
+        "Content": [
+          {
+            "Message": "Resource not found"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Name": "PatchResource",
+    "Method": "Patch",
+    "Route": "~/api/v1/resources/{id}",
+    "Description": "",
+    "Responses": [
+      {
+        "Priority": 0,
+        "StatusCode": 400,
+        "Content": [
+          {
+            "Message": "Name cannot be empty!"
+          }
+        ],
+        "Filter": {
+          "From": "Body",
+          "ApplyOn": "Name",
+          "WhenEqualsTo": ""
+        }
+      },
+      {
+        "Priority": 1,
+        "StatusCode": 204,
+        "Content": {
+        },
+        "Filter": {
+          "From": "Route",
+          "ApplyOn": "id",
+          "WhenEqualsTo": "1"
+        }
+      },
+      {
+        "Priority": 2,
+        "StatusCode": 404,
+        "Content": [
+          {
+            "Message": "Resource not found"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Name": "DeleteResource",
+    "Method": "Delete",
+    "Route": "~/api/v1/resources/{id}",
+    "Description": "",
+    "Responses": [
+      {
+        "Priority": 0,
+        "StatusCode": 204,
+        "Content": {
+        },
+        "Filter": {
+          "From": "Route",
+          "ApplyOn": "id",
+          "WhenEqualsTo": "1"
+        }
+      },
+      {
+        "Priority": 2,
+        "StatusCode": 404,
+        "Content": [
+          {
+            "Message": "Resource not found"
+          }
+        ]
+      }
+    ]
   }
 ]

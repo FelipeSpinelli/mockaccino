@@ -131,6 +131,10 @@ namespace {{ namespace }}
     {
         private readonly ILogger&lt;MockController&gt; _logger;
 
+        public MockController()
+        {
+        }
+
         public MockController(ILogger&lt;MockController&gt; logger)
         {
             _logger = logger;
