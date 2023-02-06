@@ -6,6 +6,25 @@
 		<IsRoslynComponent>true</IsRoslynComponent>
 		<LangVersion>latest</LangVersion>
 		<EnforceExtendedAnalyzerRules>true</EnforceExtendedAnalyzerRules>
+
+		<PackageVersion>0.1.0</PackageVersion>
+		<PackageId>MrMime</PackageId>
+		<Authors>Felipe Spinelli</Authors>
+		<Company>N/A</Company>
+		<Description>
+			Generates a mock controller running within your application.
+		</Description>
+		<Copyright>Copyright 2023-2023 - Felipe Spinelli</Copyright>
+		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageTags>dotnet</PackageTags>
+		<PublishRepositoryUrl>true</PublishRepositoryUrl>
+		<GenerateRepositoryUrlAttribute>true</GenerateRepositoryUrlAttribute>
+		<DebugType>embedded</DebugType>
+		<DebugSymbols>true</DebugSymbols>
+		<RespositoryType>github</RespositoryType>
+		<RepositoryUrl>https://github.com/FelipeSpinelli/mr-mime</RepositoryUrl>
+		<PackageProjectUrl>https://github.com/FelipeSpinelli/mr-mime</PackageProjectUrl>
 	</PropertyGroup>
 
 	<ItemGroup>
