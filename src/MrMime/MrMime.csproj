@@ -6,8 +6,13 @@
 		<IsRoslynComponent>true</IsRoslynComponent>
 		<LangVersion>latest</LangVersion>
 		<EnforceExtendedAnalyzerRules>true</EnforceExtendedAnalyzerRules>
-
-		<PackageVersion>0.1.0</PackageVersion>
+		<CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+		<IncludeBuildOutput>false</IncludeBuildOutput>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
+		<CompilerGeneratedFilesOutputPath>obj</CompilerGeneratedFilesOutputPath>
+		
+		<PackageVersion>0.1.1</PackageVersion>
 		<PackageId>MrMime</PackageId>
 		<Authors>Felipe Spinelli</Authors>
 		<Company>N/A</Company>
@@ -25,6 +30,8 @@
 		<RespositoryType>github</RespositoryType>
 		<RepositoryUrl>https://github.com/FelipeSpinelli/mr-mime</RepositoryUrl>
 		<PackageProjectUrl>https://github.com/FelipeSpinelli/mr-mime</PackageProjectUrl>
+		<PackOnBuild>true</PackOnBuild>
+		<PackFolder>analyzers\cs</PackFolder>
 	</PropertyGroup>
 
 	<ItemGroup>
