@@ -11,8 +11,8 @@
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
 		<CompilerGeneratedFilesOutputPath>obj</CompilerGeneratedFilesOutputPath>
-		
-		<PackageVersion>0.1.1</PackageVersion>
+
+		<PackageVersion>0.1.2</PackageVersion>
 		<PackageId>MrMime</PackageId>
 		<Authors>Felipe Spinelli</Authors>
 		<Company>N/A</Company>
@@ -45,18 +45,18 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Update="CodeBoilerplates.Designer.cs">
-	    <DesignTime>True</DesignTime>
-	    <AutoGen>True</AutoGen>
-	    <DependentUpon>CodeBoilerplates.resx</DependentUpon>
-	  </Compile>
+		<Compile Update="CodeBoilerplates.Designer.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>CodeBoilerplates.resx</DependentUpon>
+		</Compile>
 	</ItemGroup>
 
 	<ItemGroup>
-	  <EmbeddedResource Update="CodeBoilerplates.resx">
-	    <Generator>ResXFileCodeGenerator</Generator>
-	    <LastGenOutput>CodeBoilerplates.Designer.cs</LastGenOutput>
-	  </EmbeddedResource>
+		<EmbeddedResource Update="CodeBoilerplates.resx">
+			<Generator>ResXFileCodeGenerator</Generator>
+			<LastGenOutput>CodeBoilerplates.Designer.cs</LastGenOutput>
+		</EmbeddedResource>
 	</ItemGroup>
 
 	<PropertyGroup>
@@ -67,6 +67,16 @@
 		<ItemGroup>
 			<TargetPathWithTargetPlatformMoniker Include="$(PkgNewtonsoft_Json)\lib\netstandard2.0\*.dll" IncludeRuntimeDependency="false" />
 			<TargetPathWithTargetPlatformMoniker Include="$(PkgScriban)\lib\netstandard2.0\*.dll" IncludeRuntimeDependency="false" />
+		</ItemGroup>
+	</Target>
+
+	<PropertyGroup>
+		<BeforePack>$(BeforePack);IncludeOutputAsAnalyzer</BeforePack>
+	</PropertyGroup>
+
+	<Target Name="IncludeOutputAsAnalyzer" DependsOnTargets="Build">
+		<ItemGroup>
+			<None Include="$(TargetPath)" Pack="true" PackagePath="analyzers/dotnet/cs" />
 		</ItemGroup>
 	</Target>
 </Project>
