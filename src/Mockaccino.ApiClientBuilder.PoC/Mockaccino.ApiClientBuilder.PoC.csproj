@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<AdditionalFiles Include="Mockaccino.Sample.json" />
+	</ItemGroup>
+	
+	<ItemGroup>
+		<ProjectReference Include="..\Mockaccino\Mockaccino.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
+	</ItemGroup>
+
+	<Target Name="CopyApiSwaggerFile" BeforeTargets="BuildGenerateSources">
+		<Exec Command="dotnet tool restore" />
+		<Exec Command="dotnet swagger tofile --output Mockaccino.Sample.json ..\Mockaccino.Sample\bin\Debug\net6.0\Mockaccino.Sample.dll v1" />
+	</Target>
+</Project>

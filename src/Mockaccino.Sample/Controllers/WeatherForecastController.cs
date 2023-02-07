@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using System.Net;
 using System.Net.Mime;
 
 namespace Mockaccino.Sample.Controllers
@@ -22,6 +23,7 @@ namespace Mockaccino.Sample.Controllers
         }
 
         [HttpGet]
+        [ProducesResponseType(typeof(IEnumerable<WeatherForecast>), (int)HttpStatusCode.OK, MediaTypeNames.Application.Json)]
         public IEnumerable<WeatherForecast> Get()
         {
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast

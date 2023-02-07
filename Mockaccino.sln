@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mockaccino.Sample", "src\Mo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mockaccino.UnitTests", "tests\Mockaccino.UnitTests\Mockaccino.UnitTests.csproj", "{A927737C-F83C-49D2-9CA5-8591BC0F41FE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mockaccino.ApiClientBuilder.PoC", "src\Mockaccino.ApiClientBuilder.PoC\Mockaccino.ApiClientBuilder.PoC.csproj", "{200D5D87-FA5A-4C24-820F-1EE442BE79CA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{A927737C-F83C-49D2-9CA5-8591BC0F41FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A927737C-F83C-49D2-9CA5-8591BC0F41FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A927737C-F83C-49D2-9CA5-8591BC0F41FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{200D5D87-FA5A-4C24-820F-1EE442BE79CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{200D5D87-FA5A-4C24-820F-1EE442BE79CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{200D5D87-FA5A-4C24-820F-1EE442BE79CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{200D5D87-FA5A-4C24-820F-1EE442BE79CA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

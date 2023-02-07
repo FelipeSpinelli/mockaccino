@@ -16,13 +16,19 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="6.0.13" />
-	  <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="6.0.13" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
+		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.0.7" />
 	</ItemGroup>
-	
+
 	<ProjectExtensions>
 		<VisualStudio>
 			<UserProperties mr-mime_1settings_1json__JsonSchema="" />
 		</VisualStudio>
 	</ProjectExtensions>
+
+	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
+		<Exec Command="dotnet tool restore" />
+		<Exec Command="dotnet swagger tofile --output $(AssemblyName).json $(OutputPath)\$(AssemblyName).dll v1" />
+	</Target>
 </Project>
