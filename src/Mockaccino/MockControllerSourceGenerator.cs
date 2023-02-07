@@ -28,16 +28,16 @@ namespace Mockaccino
 
             var @namespace = context.Compilation?.AssemblyName ?? "Mockaccino";
 
-            var mrMimeSettingsJsonFile = context.AdditionalFiles
+            var mockaccinoSettingsJsonFile = context.AdditionalFiles
                 .Where(f => f.Path.EndsWith(MOCKACCINO_SETTINGS_FILENAME, StringComparison.InvariantCultureIgnoreCase))
                 .FirstOrDefault();
 
-            if (mrMimeSettingsJsonFile == null)
+            if (mockaccinoSettingsJsonFile == null)
             {
                 return;
             }
 
-            var jsonContent = mrMimeSettingsJsonFile.GetText(context.CancellationToken)?.ToString();
+            var jsonContent = mockaccinoSettingsJsonFile.GetText(context.CancellationToken)?.ToString();
 
             if (jsonContent == null)
             {
