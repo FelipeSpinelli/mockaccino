@@ -8,6 +8,10 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+		<AdditionalFiles Include="mockaccino.settings.json" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<ProjectReference Include="..\Mockaccino\Mockaccino.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
 	</ItemGroup>
 

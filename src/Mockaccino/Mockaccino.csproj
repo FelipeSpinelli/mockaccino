@@ -12,7 +12,7 @@
 		<EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
 		<CompilerGeneratedFilesOutputPath>obj</CompilerGeneratedFilesOutputPath>
 
-		<PackageVersion>0.1.2</PackageVersion>
+		<PackageVersion>0.1.0</PackageVersion>
 		<PackageId>Mockaccino</PackageId>
 		<Authors>Felipe Spinelli</Authors>
 		<Company>N/A</Company>
