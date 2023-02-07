@@ -8,6 +8,10 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+		<AdditionalFiles Include="mockaccino.settings.json" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<ProjectReference Include="..\Mockaccino\Mockaccino.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
 	</ItemGroup>
 
@@ -15,10 +19,4 @@
 	  <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="6.0.13" />
 	  <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
 	</ItemGroup>
-	
-	<ProjectExtensions>
-		<VisualStudio>
-			<UserProperties mr-mime_1settings_1json__JsonSchema="" />
-		</VisualStudio>
-	</ProjectExtensions>
 </Project>

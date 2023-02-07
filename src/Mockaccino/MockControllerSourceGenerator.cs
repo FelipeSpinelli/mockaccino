@@ -13,7 +13,7 @@ using System.Text;
 namespace Mockaccino
 {
     [Generator]
-    public class MockaccinoSourceGenerator : ISourceGenerator
+    public class MockControllerSourceGenerator : ISourceGenerator
     {
         public void Initialize(GeneratorInitializationContext context)
         {
@@ -24,12 +24,12 @@ namespace Mockaccino
 
         public void Execute(GeneratorExecutionContext context)
         {
-            const string MRMIME_SETTINGS_FILENAME = "mockaccino.settings.json";
+            const string MOCKACCINO_SETTINGS_FILENAME = "mockaccino.settings.json";
 
             var @namespace = context.Compilation?.AssemblyName ?? "Mockaccino";
 
             var mrMimeSettingsJsonFile = context.AdditionalFiles
-                .Where(f => f.Path.EndsWith(MRMIME_SETTINGS_FILENAME, StringComparison.InvariantCultureIgnoreCase))
+                .Where(f => f.Path.EndsWith(MOCKACCINO_SETTINGS_FILENAME, StringComparison.InvariantCultureIgnoreCase))
                 .FirstOrDefault();
 
             if (mrMimeSettingsJsonFile == null)

@@ -9,7 +9,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<None Remove="mockaccino.settings.json" />
+		<AdditionalFiles Include="mockaccino.settings.json" />
 	</ItemGroup>
 
 	<ItemGroup>
