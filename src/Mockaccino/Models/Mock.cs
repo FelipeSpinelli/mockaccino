@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace MrMime.Models
+namespace Mockaccino.Models
 {
     internal record Mock
     {

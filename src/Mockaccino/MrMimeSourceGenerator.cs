@@ -1,6 +1,6 @@
 ﻿using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.Text;
-using MrMime.Models;
+using Mockaccino.Models;
 using Newtonsoft.Json;
 using Scriban;
 using System;
@@ -10,10 +10,10 @@ using System;
 using System.Linq;
 using System.Text;
 
-namespace MrMime
+namespace Mockaccino
 {
     [Generator]
-    public class MrMimeSourceGenerator : ISourceGenerator
+    public class MockaccinoSourceGenerator : ISourceGenerator
     {
         public void Initialize(GeneratorInitializationContext context)
         {
@@ -24,9 +24,9 @@ namespace MrMime
 
         public void Execute(GeneratorExecutionContext context)
         {
-            const string MRMIME_SETTINGS_FILENAME = "mr-mime.settings.json";
+            const string MRMIME_SETTINGS_FILENAME = "mockaccino.settings.json";
 
-            var @namespace = context.Compilation?.AssemblyName ?? "MrMime";
+            var @namespace = context.Compilation?.AssemblyName ?? "Mockaccino";
 
             var mrMimeSettingsJsonFile = context.AdditionalFiles
                 .Where(f => f.Path.EndsWith(MRMIME_SETTINGS_FILENAME, StringComparison.InvariantCultureIgnoreCase))

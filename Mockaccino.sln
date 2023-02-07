@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32922.545
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MrMime", "src\MrMime\MrMime.csproj", "{C050D6FF-A589-4AF1-A650-EA6DAC76F467}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mockaccino", "src\Mockaccino\Mockaccino.csproj", "{C050D6FF-A589-4AF1-A650-EA6DAC76F467}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MrMime.Sample", "src\MrMime.Sample\MrMime.Sample.csproj", "{E369BC11-B482-41C5-9308-978CCA7A2885}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mockaccino.Sample", "src\Mockaccino.Sample\Mockaccino.Sample.csproj", "{E369BC11-B482-41C5-9308-978CCA7A2885}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MrMime.UnitTests", "tests\MrMime.UnitTests\MrMime.UnitTests.csproj", "{A927737C-F83C-49D2-9CA5-8591BC0F41FE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mockaccino.UnitTests", "tests\Mockaccino.UnitTests\Mockaccino.UnitTests.csproj", "{A927737C-F83C-49D2-9CA5-8591BC0F41FE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

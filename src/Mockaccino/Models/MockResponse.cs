@@ -2,7 +2,7 @@
 using System.Net;
 using System.Text;
 
-namespace MrMime.Models
+namespace Mockaccino.Models
 {
     internal record MockResponse
     {

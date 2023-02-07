@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Net.Mime;
 
-namespace MrMime.Sample.Controllers
+namespace Mockaccino.Sample.Controllers
 {
     [ApiController]
     [Route("[controller]")]

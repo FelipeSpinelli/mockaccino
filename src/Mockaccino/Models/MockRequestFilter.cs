@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace MrMime.Models
+namespace Mockaccino.Models
 {
     internal record MockRequestFilter
     {

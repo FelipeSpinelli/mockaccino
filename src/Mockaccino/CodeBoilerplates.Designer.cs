@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MrMime {
+namespace Mockaccino {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace MrMime {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("MrMime.CodeBoilerplates", typeof(CodeBoilerplates).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Mockaccino.CodeBoilerplates", typeof(CodeBoilerplates).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

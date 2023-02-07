@@ -1,6 +1,6 @@
 using FluentAssertions;
 
-namespace MrMime.UnitTests
+namespace Mockaccino.UnitTests
 {
     public class MockControllerGenerationTests
     {

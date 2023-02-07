@@ -1,4 +1,4 @@
-namespace MrMime.Sample
+namespace Mockaccino.Sample
 {
     public class WeatherForecast
     {

@@ -1,4 +1,4 @@
-﻿using MrMime.Models;
+﻿using Mockaccino.Models;
 
 internal static class MockExtensions
 {
