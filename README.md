@@ -1,98 +1,127 @@
-# Mr.Mime
+# Mockaccino
 
-A .NET framework for fill objects properties.
+A source generator that adds a mock controller.
 
 ## Getting Started
 
-These instructions will get you an overview to start filling your objects the way you need.
+Let's suppose that your team need to provide a new endpoint. That endpoint will be consumed by front-end's team.
+With Mockaccino they won't need to wait your team develop the new endpoint. 
+You just need to define the payloads and the possible scenarios, put all togheter in a `json` file, and it's done. You and your team can now develop the real solution without pressure.
+
+### Installing Mockaccino
+You should install [Mockaccino with NuGet](https://www.nuget.org/packages/Mockaccino):
+
+    Install-Package Mockaccino
+    
+Or via the .NET Core command line interface:
+
+    dotnet add package Mockaccino
+
+Either commands, from Package Manager Console or .NET Core CLI, will download and install Mockaccino and all required dependencies.
 
 ### Example
+For this example let's suppose you need to develop two new endpoints:
+```gherkin
+Feature: Create a Resource
+    Scenario Outline: Success
+        Given I request to create a new Resource creation
+        When It's a valid request
+        Then I should get the created resource's id
+        And I should get a response with 200 HttpStatusCode
 
-Let's suppose that you have a Customer class, like below, and needs to fill it's properties to test an response of an API. 
+    Scenario Outline: Bad Request
+        Given I request a new Resource creation
+        When It's Name is empty
+        Then I should get an array with validations Messages
+        And I should get a response with 400 HttpStatusCode
 ```
-using System;
+**AND**
 
-namespace MrMime.Core.Tests.Models
-{
-    public class Customer
-    {
-        public Guid CustomerId { get; set; }
-        public string Name { get; set; }
-        public short Age { get; set; }
-        public DateTime? Birthday { get; set; }
-        public bool IsActive { get; set; }
-    }
-}
+```gherkin
+Feature: Get a Resource By Id
+    Scenario Outline: Success
+        Given I request to get a Resource
+        When I give an id which exists
+        Then I should get the resource's data
+        And I should get a response with 200 HttpStatusCode
+
+    Scenario Outline: Not Found
+        Given I request to get a Resource
+        When I give an id which not exists
+        Then I should get a response with 404 HttpStatusCode
 ```
 
-After you refer Mr.Mime to your project, you will need to instantiate an object of class *** Mimenator *** and invoke the Load method to load the contracts. You can pass the path of the files, otherwise it will attempt to load the files from the Contracts folder, within the current directory, during the execution of the program.
-```
-var mimenator = new Mimenator();
-mimenator.Load();
-```
-**Or**
-```
-var mimenator = new Mimenator();
-mimenator.Load("<contracts-folder-path>");
-```
-Mr.Mime will look for files in the specified folder that end with .contract.json. (Ex .: ***Customer.contract.json***).
-These files need to look like this:
-```
-{
-
-    "contract_id": "D3087454-23A7-47B5-B7E4-5E1BA6BF15D0",
-    "name": "Customer",
-    "fields": [
-        {
-            "name": "CustomerId",
-            "type": "Guid",
-            "is_nullable": false,
-            "fill_mode": "Random"
+Well, with those scenarios defined, now is just add a json file, naming it as `mockaccino.settings.json`, and let ***Mockaccino*** do the job for you.
+The file to attend the above scenarios must be like:
+```json
+[
+  {
+    "Name": "GetResourceById",
+    "Method": "Get",
+    "Route": "~/api/v1/resources/{id}",
+    "Description": "It returns some response",
+    "Responses": [
+      {
+        "Priority": 0,
+        "StatusCode": 200,
+        "Content": {
+          "Name": "Joe Doe",
+          "Age": 32
         },
-        {
-            "name": "Name",
-            "type": "String",
-            "is_nullable": false,
-            "fill_mode": "Random"
-        },
-        {
-            "name": "Age",
-            "type": "Int16",
-            "is_nullable": false,
-            "fill_mode": "Random",
-            "min_value": "18",
-            "max_value": "70"
-        },
-        {
-            "name": "Birthday",
-            "type": "DateTime",
-            "is_nullable": true,
-            "fill_mode": "Random"
-        },
-        {
-            "name": "IsActive",
-            "type": "Boolean",
-            "is_nullable": false,
-            "fill_mode": "Fixed",
-            "default_value": false
+        "Filter": {
+          "From": "Route",
+          "ApplyOn": "id",
+          "WhenEqualsTo": "1"
         }
+      },
+      {
+        "Priority": 1,
+        "StatusCode": 404,
+        "Content": [
+          {
+            "Message": "Resource not found"
+          }
+        ]
+      }
     ]
-}
+  },
+  {
+    "Name": "CreateResource",
+    "Method": "Post",
+    "Route": "~/api/v1/resources",
+    "Description": "",
+    "Responses": [
+      {
+        "Priority": 0,
+        "StatusCode": 400,
+        "Content": [
+          {
+            "Message": "Name cannot be empty!"
+          }
+        ],
+        "Filter": {
+          "From": "Body",
+          "ApplyOn": "Name",
+          "WhenEqualsTo": ""
+        }
+      },
+      {
+        "Priority": 1,
+        "StatusCode": 200,
+        "Content": {
+          "Id": "1"
+        }
+      }
+    ]
+  }
+]
+
 ```
-After the contracts has been loaded, you just need to invoke the Imitate method, giving an object and the **contract *name* or *id***:
-```
-var customer = mimenator.Imitate(new Customer(), "Customer");
-```
-***Or***
-```
-var customer = mimenator.Imitate(new Customer(), Guid.Parse("D3087454-23A7-47B5-B7E4-5E1BA6BF15D0"));
-```
+### Prerequisites
+
+The project depends on [Newtonsoft's Json.NET library](https://www.newtonsoft.com/json) and must be compatible with `netstandard2.0`.
 
 
-## Prerequisites
-
-The project depends on [Newtonsoft's Json.NET library](https://www.newtonsoft.com/json) and .NET Framework 4.5.1 version and above. 
-
-
+## References
 https://github.com/dotnet/roslyn/blob/main/docs/features/source-generators.cookbook.md
 https://github.com/amis92/csharp-source-generators
