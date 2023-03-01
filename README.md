@@ -51,7 +51,7 @@ Feature: Get a Resource By Id
         Then I should get a response with 404 HttpStatusCode
 ```
 
-Well, with those scenarios defined, now is just add a json file, naming it as `mockaccino.settings.json`, and let ***Mockaccino*** do the job for you.
+Well, with those scenarios defined, now it's just add a json file, naming it as `mockaccino.settings.json`, and let ***Mockaccino*** do the job for you.
 The file to attend the above scenarios must be like:
 ```json
 [
