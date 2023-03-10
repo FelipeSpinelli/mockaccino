@@ -143,50 +143,6 @@ namespace {{ namespace }}
         {{for mock in mocks }} 
             {{ mock }}
         {{end}}
-        
-        private bool QueryFilterMatches(string queryFilterKey, string queryFilterValue)
-        {
-            if (!Request.Query.ContainsKey(queryFilterKey))
-            {
-                return false;
-            }
-
-            return Request.Query[queryFilterKey].ToString()
-                .Equals(queryFilterValue, StringComparison.InvariantCultureIgnoreCase);
-
-        }
-
-        private bool RouteFilterMatches(string routeFilterKey, string routeFilterValue)
-        {
-            if (!Request.RouteValues.ContainsKey(routeFilterKey))
-            {
-                return false;
-            }
-
-            return Request.RouteValues[routeFilterKey]?.Equals(routeFilterValue) ?? false;
-        }
-
-        private bool HeaderFilterMatches(string headerFilterKey, string headerFilterValue)
-        {
-            if (!Request.Headers.ContainsKey(headerFilterKey))
-            {
-                return false;
-            }
-
-            return Request.Headers[headerFilterKey].Equals(headerFilterValue);
-        }
-
-        private bool BodyFilterMatches(object? body, string bodyFilterProperty, string bodyFilterValue)
-        {
-            if (body == null)
-            {
-                return false;
-            }
-
-            var jToken = JToken.FromObject(body);
-
-            return jToken[bodyFilterProperty]?.ToString().Equals(bodyFilterValue) ?? false;
-        }
     }
 }</value>
   </data>
