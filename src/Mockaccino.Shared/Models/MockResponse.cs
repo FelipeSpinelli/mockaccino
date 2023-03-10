@@ -2,9 +2,9 @@
 using System.Net;
 using System.Text;
 
-namespace Mockaccino.Models
+namespace Mockaccino
 {
-    internal record MockResponse
+    public record MockResponse
     {
         public int Priority { get; set; }
         public HttpStatusCode StatusCode { get; set; }
@@ -18,7 +18,7 @@ namespace Mockaccino.Models
             var serializedContent = JsonConvert.SerializeObject(Content, Formatting.None)
                 .Replace(@"""", @"\""");
             var returnSentence = @$"
-            return StatusCode({(int)StatusCode}, JsonConvert.DeserializeObject<object>(""{serializedContent}""));";
+                return StatusCode({(int)StatusCode}, JsonConvert.DeserializeObject<object>(""{serializedContent}""));";
 
             contentStringBuilder.AppendLine(Filter.GetConditionWith(returnSentence));
 

@@ -1,6 +1,6 @@
-﻿namespace Mockaccino.Models
+﻿namespace Mockaccino
 {
-    internal enum HttpMethod
+    public enum HttpMethod
     {
         Get,
         Post,

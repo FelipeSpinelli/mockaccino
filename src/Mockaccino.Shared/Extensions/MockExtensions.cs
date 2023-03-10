@@ -1,4 +1,4 @@
-﻿using Mockaccino.Models;
+﻿namespace Mockaccino;
 
 internal static class MockExtensions
 {

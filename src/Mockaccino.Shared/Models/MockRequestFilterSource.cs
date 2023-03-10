@@ -1,6 +1,6 @@
-﻿namespace Mockaccino.Models
+﻿namespace Mockaccino
 {
-    internal enum MockRequestFilterSource
+    public enum MockRequestFilterSource
     {
         QueryParams,
         Route,
