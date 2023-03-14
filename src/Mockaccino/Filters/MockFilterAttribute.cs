@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
+using Newtonsoft.Json;
 using System.Linq;
 
 namespace Mockaccino
@@ -31,7 +32,7 @@ namespace Mockaccino
                 return;
             }
 
-            context.Result = new ObjectResult(response.Content)
+            context.Result = new ObjectResult(JsonConvert.DeserializeObject(response.Content))
             {
                 StatusCode = (int)response.StatusCode
             };

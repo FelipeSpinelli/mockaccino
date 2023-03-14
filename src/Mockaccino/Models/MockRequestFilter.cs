@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Routing;
 
 namespace Mockaccino
 {
-    public record MockRequestFilter
+    public class MockRequestFilter
     {
         public MockRequestFilterSource From { get; set; }
         public string ApplyOn { get; set; } = null!;

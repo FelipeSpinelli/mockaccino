@@ -30,11 +30,17 @@ namespace Mockaccino.UnitTests
         public static IEnumerable<object[]> GetMockedRequests()
         {
             yield return new object[] { GetResourceById200(), 200, JsonConvert.SerializeObject(new { Name = "Successfull scenario", Age = 32 }) };
+            yield return new object[] { GetResourceById404(), 404, JsonConvert.SerializeObject(new[] { new { Message = "Resource not found" } }) };
         }
 
         private static Func<HttpClient?, Task<HttpResponseMessage>> GetResourceById200()
         {
             return (client) => client.GetAsync("/resource/1");
+        }
+
+        private static Func<HttpClient?, Task<HttpResponseMessage>> GetResourceById404()
+        {
+            return (client) => client.GetAsync("/resource/2");
         }
     }
 }

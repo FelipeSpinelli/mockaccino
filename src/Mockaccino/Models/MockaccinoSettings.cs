@@ -2,11 +2,11 @@
 
 namespace Mockaccino
 {
-    public record MockaccinoSettings
+    public class MockaccinoSettings
     {
         public const string SECTION = "MockaccinoSettings";
 
-        public bool Enable { get; set; }
+        public bool Enabled { get; set; }
         public Mock[] Mocks { get; set; } = Array.Empty<Mock>();
     }
 }

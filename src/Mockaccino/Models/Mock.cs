@@ -2,7 +2,7 @@
 
 namespace Mockaccino
 {
-    public record Mock
+    public class Mock
     {
         public string Name { get; set; } = null!;
         public string Description { get; set; } = null!;

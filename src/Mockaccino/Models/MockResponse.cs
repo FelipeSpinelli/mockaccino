@@ -2,11 +2,11 @@
 
 namespace Mockaccino
 {
-    public record MockResponse
+    public class MockResponse
     {
         public int Priority { get; set; }
         public HttpStatusCode StatusCode { get; set; }
-        public object Content { get; set; } = new();
+        public string Content { get; set; } = "{}";
         public MockRequestFilter? Filter { get; set; }
     }
 }
