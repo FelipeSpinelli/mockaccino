@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Routing;
+﻿using Mockaccino.Models;
 
 namespace Mockaccino
 {
@@ -10,14 +9,14 @@ namespace Mockaccino
         public string Value { get; set; } = null!;
         public bool IsPattern { get; set; }
 
-        internal bool IsMatch(HttpContext httpContext)
+        internal bool IsMatch(FilterParams filterParams)
         {
             return From switch
             {
-                MockRequestFilterSource.QueryParams => httpContext.Request.Query.QueryFilterMatches(ApplyOn, Value, IsPattern),
-                MockRequestFilterSource.Route => httpContext.GetRouteData().RouteFilterMatches(ApplyOn, Value, IsPattern),
-                MockRequestFilterSource.Headers => httpContext.Request.Headers.HeaderFilterMatches(ApplyOn, Value, IsPattern),
-                MockRequestFilterSource.Body => httpContext.Request.Body.BodyFilterMatches(ApplyOn, Value, IsPattern),
+                MockRequestFilterSource.QueryParams => filterParams.QueryParams?.QueryFilterMatches(ApplyOn, Value, IsPattern) ?? false,
+                MockRequestFilterSource.Route => filterParams.RouteData?.RouteFilterMatches(ApplyOn, Value, IsPattern) ?? false,
+                MockRequestFilterSource.Headers => filterParams.Headers?.HeaderFilterMatches(ApplyOn, Value, IsPattern) ?? false,
+                MockRequestFilterSource.Body => filterParams.Body?.BodyFilterMatches(ApplyOn, Value, IsPattern) ?? false,
                 _ => false
             };
         }

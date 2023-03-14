@@ -1,7 +1,4 @@
 using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using System.Net.Mime;
 
 namespace Mockaccino.Sample.Controllers
 {

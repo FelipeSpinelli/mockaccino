@@ -19,5 +19,12 @@ namespace Mockaccino.Sample.Controllers
         {
             throw new Exception("Mock not found!");
         }
+
+        [HttpPost]
+        [MockFilter(MockName = "CreateResource")]
+        public Task<IActionResult> Post([FromBody]object resource)
+        {
+            throw new Exception("Mock not found!");
+        }
     }
 }

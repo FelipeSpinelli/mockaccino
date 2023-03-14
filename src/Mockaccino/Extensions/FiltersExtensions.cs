@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Routing;
 using Newtonsoft.Json.Linq;
 using System;
-using System.IO;
 using System.Text.RegularExpressions;
 
 namespace Mockaccino
@@ -46,16 +45,14 @@ namespace Mockaccino
                 : headers[headerFilterKey].Equals(headerFilterValue);
         }
 
-        public static bool BodyFilterMatches(this Stream body, string bodyFilterProperty, string bodyFilterValue, bool isPattern)
+        public static bool BodyFilterMatches(this object body, string bodyFilterProperty, string bodyFilterValue, bool isPattern)
         {
             if (body == null)
             {
                 return false;
             }
 
-            body.Position = 0;
-
-            var jToken = JToken.Parse(new StreamReader(body).ReadToEnd());
+            var jToken = JToken.FromObject(body);
 
             return isPattern
                 ? IsMatch(bodyFilterValue, jToken[bodyFilterProperty]?.ToString() ?? string.Empty)
