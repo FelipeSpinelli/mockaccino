@@ -1,17 +1,20 @@
-var builder = WebApplication.CreateBuilder(args);
+using Microsoft.AspNetCore;
+using Mockaccino.Sample;
 
-// Add services to the container.
+IConfiguration Configuration = new ConfigurationBuilder()
+            .SetBasePath(Directory.GetCurrentDirectory())
+            .AddJsonFile("appsettings.json", false, true)
+            .AddEnvironmentVariables()
+            .Build();
 
-builder.Services
-    .AddControllers()
-    .AddNewtonsoftJson();
 
-var app = builder.Build();
+BuildWebHost(args).Run();
 
-// Configure the HTTP request pipeline.
+IWebHost BuildWebHost(string[] args) =>
+    WebHost.CreateDefaultBuilder(args)
+        .UseStartup<Startup>()
+        .UseConfiguration(Configuration)
+        .Build();
 
-app.UseAuthorization();
 
-app.MapControllers();
-
-app.Run();
+public partial class Program { }

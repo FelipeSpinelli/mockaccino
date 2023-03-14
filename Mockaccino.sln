@@ -22,8 +22,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{
 		.github\workflows\github-actions.yaml = .github\workflows\github-actions.yaml
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mockaccino.Shared", "src\Mockaccino.Shared\Mockaccino.Shared.csproj", "{6D9F6C31-F4DD-404B-940A-F7602D6D1B49}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,10 +40,6 @@ Global
 		{A927737C-F83C-49D2-9CA5-8591BC0F41FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A927737C-F83C-49D2-9CA5-8591BC0F41FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A927737C-F83C-49D2-9CA5-8591BC0F41FE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6D9F6C31-F4DD-404B-940A-F7602D6D1B49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6D9F6C31-F4DD-404B-940A-F7602D6D1B49}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6D9F6C31-F4DD-404B-940A-F7602D6D1B49}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6D9F6C31-F4DD-404B-940A-F7602D6D1B49}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -56,7 +50,6 @@ Global
 		{A927737C-F83C-49D2-9CA5-8591BC0F41FE} = {3A8B1AA8-191F-44D2-8638-46192D014DD8}
 		{1758E90D-8956-4E04-9E30-F50FACA80FD6} = {7494F76A-63DD-4F7E-AB54-00B76192A88F}
 		{8414DD00-329E-4E71-B237-0984A664BF15} = {1758E90D-8956-4E04-9E30-F50FACA80FD6}
-		{6D9F6C31-F4DD-404B-940A-F7602D6D1B49} = {1F0C81B0-6255-4786-AEB1-951DA572FF9E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {116244CA-DA51-4F8E-97DE-15E4F6ADFDDD}

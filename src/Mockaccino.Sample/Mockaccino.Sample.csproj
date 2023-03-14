@@ -8,15 +8,15 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<AdditionalFiles Include="mockaccino.settings.json" />
+		<ProjectReference Include="..\Mockaccino\Mockaccino.csproj" />
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="6.0.13" />
+
+		<InternalsVisibleTo Include="Mockaccino.UnitTests" />
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\Mockaccino\Mockaccino.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="6.0.13" />
-	  <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
+	  <Content Update="appsettings.json">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
 	</ItemGroup>
 </Project>

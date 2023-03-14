@@ -1,34 +1,21 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
-using Newtonsoft.Json;
-using System;
-using System.IO;
 using System.Linq;
 
 namespace Mockaccino
 {
-    internal class MockFilter : ActionFilterAttribute
+    public class MockFilterAttribute : ActionFilterAttribute
     {
-        private static readonly Mock[]? _mocks;
-
-        static MockFilter()
-        {
-            var filePath = Path.Combine(Directory.GetCurrentDirectory(), "mockaccina.settings.json");
-            if (!File.Exists(filePath))
-            {
-                return;
-            }
-
-            _mocks = JsonConvert.DeserializeObject<Mock[]>(File.ReadAllText(filePath));
-        }
+        private static MockaccinoSettings _settings = new();
 
         public string MockName { get; set; } = null!;
+
         public override void OnActionExecuting(ActionExecutingContext context)
         {
             context.HttpContext.Request.EnableBuffering();
 
-            var mock = GetMocks().FirstOrDefault(x => x.Name == MockName);
+            var mock = _settings.Mocks.FirstOrDefault(x => x.Name == MockName);
 
             if (mock == null)
             {
@@ -50,6 +37,6 @@ namespace Mockaccino
             };
         }
 
-        private static Mock[] GetMocks() => _mocks ?? Array.Empty<Mock>();
+        public static void Configure(MockaccinoSettings settings) => _settings = settings;
     }
 }

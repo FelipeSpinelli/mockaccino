@@ -32,23 +32,5 @@ namespace Mockaccino.Sample.Controllers
             })
             .ToArray();
         }
-
-        [HttpGet("Test")]
-        [Produces(MediaTypeNames.Application.Json)]
-        public IActionResult Test()
-        {
-            var content = new
-            { 
-                Name = "Teste",
-                Age = 1
-            };
-
-            var jToken = JToken.FromObject(content);
-            var json = jToken.ToString();
-            var serialized = JsonConvert.SerializeObject(content, Formatting.None);
-            var deserialized = JsonConvert.DeserializeObject(json);
-
-            return StatusCode(200, deserialized);
-        }
     }
 }
